@@ -1,0 +1,37 @@
+@media screen and (max-width:900px) {
+    
+    #timer-bar {
+        text-align: center;
+    
+        #timer-text {
+            font-size: 1.5rem;
+        }
+        
+        #timer {
+            width: 75%;
+            margin: 0 auto;
+            span {
+                margin: 0 2%;
+                width: 25%;
+            }
+            .number {
+                font-weight: bold;
+                font-size: 1.5rem;
+                color: white;
+                letter-spacing: 0.25rem;
+            }
+        
+            .time {
+                font-size: 1rem;
+            }
+        }
+    
+        #close {
+            position: relative;
+            width: 10%;
+            cursor: pointer;
+            margin-top: 5%;
+        }
+        
+    }
+}

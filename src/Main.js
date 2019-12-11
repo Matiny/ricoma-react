@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './css/style.css';
+import './css/media-query.css';
 
 //Images
 
@@ -149,7 +150,6 @@ export default class Main extends Component {
     this.setState(prevState => ({
       showCart: !prevState.showCart
     }));
-    console.log(this.state.showCart);
     
   }
 
@@ -177,7 +177,8 @@ export default class Main extends Component {
     }
 
     let timerStyle = {
-      display: this.state.timer ? "flex" : "none"
+      display: this.state.timer && window.innerWidth > 1200 ? "flex" : 
+      this.state.timer && window.innerWidth < 1200 ? "block" : "none"
     }
     
     let cartStyle = {
@@ -209,6 +210,7 @@ export default class Main extends Component {
     return (
       <main>
         <section id="timer-bar" style={timerStyle}>
+        <img src={close} alt="" id="close" onClick={() => { this.closeTimer() }} />
           <p id="timer-text">Lorem ipsum dolor sit amet, Countdown to 2020</p>
           <div id="timer">
             <span>
@@ -228,7 +230,6 @@ export default class Main extends Component {
               <p className="time">seconds</p>
             </span>
           </div>
-          <img src={close} alt="" id="close" onClick={() => { this.closeTimer() }} />
 
         </section>
         <nav id="menu">
