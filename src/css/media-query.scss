@@ -34,4 +34,221 @@
         }
         
     }
+
+    #menu {
+        display: none
+        
+    }
+
+    #mobile-menu {
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2%;
+
+        .menu-button {
+            width: 10%;
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+            }
+        }
+
+        #cart {
+            position: relative;
+            width: 15%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #cart-pic {
+            width: 75%;
+        }
+
+        #arrow-pic {
+            width: 20%;
+            margin-left: 5%;
+        }
+
+    }
+
+    #hero {
+        background: url(../img/jpg/hero-bg-mobile.jpg) no-repeat center scroll;
+        background-size: cover;
+        text-align: center;
+
+        #left {
+            width: 100%;
+            padding-bottom: 5%;
+        }
+    
+        h1 {
+            font-size: 2.5rem; 
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            line-height: 3rem;
+            padding-bottom: 5%;
+    
+        }
+    
+        .desc-wrapper {
+            padding-bottom: 5%;
+        }
+        
+        .hero-desc {
+            font-family: 'Open Sans', sans-serif;
+            padding-bottom: 1.5%;
+            font-size: 1rem;
+        }
+    
+        button {
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background-color: black;
+            box-shadow: 0 .5vw 1vw rgba(0,0,0,0.6);
+            width: 33%;
+            color: white;
+            border: none;
+            padding: 2%;
+            border-radius: 2rem;
+        }
+        
+        #hero-man {
+            display: none;
+        }
+        
+    }
+
+    #product-group {
+        display: block;
+        padding: 7.5% 3% 5% 3%;
+    
+        .product-wrapper {
+            width: 85%;
+            padding: 3% 0;
+            margin: 0 auto;
+    
+            .product {
+                user-select: none;
+                overflow: hidden;
+                border: 1px solid #ECECEC;
+                border-radius: 1rem;
+                box-shadow: 0 0 10px 0 rgba(0,0,0,0.13);
+    
+                .p-img {
+                    transition: background-size .33s ease-out;
+                    height: 15rem;
+                    width: 100%;
+                    background-size: 100%;
+                    background-position: center;
+                }
+    
+                &:hover .p-img {
+                    background-size: 115%;
+                }
+                #glasses {
+                    background-image: url(../img/jpg/glasses.jpg);
+                }
+                #chair {
+                    background-image: url(../img/jpg/chair.jpg);
+                }
+                #airpods {
+                    background-image: url(../img/jpg/airpods.jpg);
+                }
+                #plant {
+                    background-image: url(../img/jpg/plant.jpg);
+                }
+                h1 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    font-family: 'Poppins', sans-serif;
+                }
+                p {
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: normal;
+                    font-size: 1rem;
+                }
+                .product-desc {
+                    padding: 5%;
+                }
+    
+                .checkbox-custom {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 0.33rem;
+                    background-size: cover;
+                    margin-right: 5%;
+                    vertical-align: text-top;
+                    width: 2rem;
+                    height: 2rem;
+                    cursor: pointer;
+                
+                    &.check1 {
+                        background-color: #143061;
+                    }
+                    &.check2 {
+                        background-color: #81396F;
+                    }
+                    &.check3 {
+                        background-color: #F6437D;
+                    }
+                
+                    img {
+                        width: 66%;
+                    }
+                }
+    
+                button {
+                    font-weight: 600;
+                    font-family: 'Poppins', sans-serif;
+                    color: white;
+                    background: black;
+                    border: none;
+                    display: block;
+                    width: 100%;
+                    font-size: 1.25rem;
+                    padding: 7.5%;
+                    transition: background-image 0.33s;
+                }
+    
+            }
+        }
+    }
+    
+    footer {
+        display: flex;
+        align-items: center;
+        background-color: black;
+        font-family: 'Poppins', sans-serif;
+        padding: 3% 7.5%;
+        padding-bottom: 5%;
+        
+        img {
+            width: 20%;
+            margin-right: 7.5%;
+            display: block;
+        }
+    
+        .footerbox {
+            padding: 0 2.5%;
+        }
+        
+        h2 {
+            font-size: 1.25rem;
+            color: #F6437D;
+            font-weight: 800;
+            padding: 3% 0;
+        }
+        p {
+            font-size: .7rem;
+            font-weight: 200;
+            color: white;
+            padding: 2.5% 0;
+        }
+    }
 }

@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+#mobile-menu {
+  display: none;
+}
+
 button {
   cursor: pointer;
 }
@@ -262,6 +266,7 @@ button {
   border-bottom-left-radius: 1vw;
   -webkit-box-shadow: 0 0.25vw 10px 0 rgba(0, 0, 0, 0.13);
           box-shadow: 0 0.25vw 10px 0 rgba(0, 0, 0, 0.13);
+  text-align: center;
 }
 
 #menu hr {
@@ -340,7 +345,7 @@ button {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   font-size: 1.1vw;
-  background-color: black;
+  background: black;
   -webkit-box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.6);
           box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.6);
   width: 17vw;
@@ -348,6 +353,13 @@ button {
   border: none;
   padding: 2%;
   border-radius: 2vw;
+  -webkit-transition: background .33s;
+  transition: background .33s;
+}
+
+#hero button:hover {
+  background: linear-gradient(135deg, #fca3e7 0%, #89aeea 100%);
+  color: black;
 }
 
 #hero #hero-man {
@@ -382,10 +394,16 @@ button {
 }
 
 #product-group .product-wrapper .product .p-img {
+  -webkit-transition: background-size .33s ease-out;
+  transition: background-size .33s ease-out;
   height: 17vw;
   width: 100%;
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
+}
+
+#product-group .product-wrapper .product:hover .p-img {
+  background-size: 115%;
 }
 
 #product-group .product-wrapper .product #glasses {
@@ -424,12 +442,14 @@ button {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
   color: white;
-  background-color: black;
+  background: black;
   border: none;
   display: block;
   width: 100%;
   font-size: 1.1vw;
   padding: 7.5%;
+  -webkit-transition: background-image 0.33s;
+  transition: background-image 0.33s;
 }
 
 footer {

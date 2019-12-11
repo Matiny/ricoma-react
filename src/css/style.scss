@@ -7,6 +7,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,400,600,800&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+#mobile-menu {
+    display: none;
+}
+
 button {
     cursor: pointer;
 }
@@ -233,6 +237,7 @@ button {
         border-bottom-right-radius: 1vw;
         border-bottom-left-radius: 1vw;
         box-shadow: 0 0.25vw 10px 0 rgba(0,0,0,0.13);
+        text-align: center;
     }
 
     hr {
@@ -307,13 +312,19 @@ button {
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         font-size: 1.1vw;
-        background-color: black;
+        background: black;
         box-shadow: 0 .5vw 1vw rgba(0,0,0,0.6);
         width: 17vw;
         color: white;
         border: none;
         padding: 2%;
         border-radius: 2vw;
+        transition: background .33s;
+    }
+
+    button:hover {
+        background:linear-gradient(135deg, #fca3e7 0%,#89aeea 100%);
+        color: black;
     }
     
     #hero-man {
@@ -341,10 +352,15 @@ button {
             box-shadow: 0 0 10px 0 rgba(0,0,0,0.13);
 
             .p-img {
+                transition: background-size .33s ease-out;
                 height: 17vw;
                 width: 100%;
-                background-size: cover;
+                background-size: 100%;
                 background-position: center;
+            }
+
+            &:hover .p-img {
+                background-size: 115%;
             }
             #glasses {
                 background-image: url(../img/jpg/glasses.jpg);
@@ -378,13 +394,19 @@ button {
                 font-weight: 600;
                 font-family: 'Poppins', sans-serif;
                 color: white;
-                background-color: black;
+                background: black;
                 border: none;
                 display: block;
                 width: 100%;
                 font-size: 1.1vw;
                 padding: 7.5%;
+                transition: background-image 0.33s;
             }
+
+            // button:hover {
+            //     background-image: -webkit-linear-gradient(-45deg, #8997b0 0%,#f7b5cb 100%);
+            //     color: black;
+            // }
         }
     }
 }

@@ -28,5 +28,217 @@
     cursor: pointer;
     margin-top: 5%;
   }
+  #menu {
+    display: none;
+  }
+  #mobile-menu {
+    font-family: 'Poppins', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2%;
+  }
+  #mobile-menu .menu-button {
+    width: 10%;
+  }
+  #mobile-menu .menu-button img {
+    width: 100%;
+    vertical-align: middle;
+  }
+  #mobile-menu #cart {
+    position: relative;
+    width: 15%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+  }
+  #mobile-menu #cart-pic {
+    width: 75%;
+  }
+  #mobile-menu #arrow-pic {
+    width: 20%;
+    margin-left: 5%;
+  }
+  #hero {
+    background: url(../img/jpg/hero-bg-mobile.jpg) no-repeat center scroll;
+    background-size: cover;
+    text-align: center;
+  }
+  #hero #left {
+    width: 100%;
+    padding-bottom: 5%;
+  }
+  #hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    line-height: 3rem;
+    padding-bottom: 5%;
+  }
+  #hero .desc-wrapper {
+    padding-bottom: 5%;
+  }
+  #hero .hero-desc {
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom: 1.5%;
+    font-size: 1rem;
+  }
+  #hero button {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: black;
+    -webkit-box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.6);
+    width: 33%;
+    color: white;
+    border: none;
+    padding: 2%;
+    border-radius: 2rem;
+  }
+  #hero #hero-man {
+    display: none;
+  }
+  #product-group {
+    display: block;
+    padding: 7.5% 3% 5% 3%;
+  }
+  #product-group .product-wrapper {
+    width: 85%;
+    padding: 3% 0;
+    margin: 0 auto;
+  }
+  #product-group .product-wrapper .product {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    overflow: hidden;
+    border: 1px solid #ECECEC;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.13);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.13);
+  }
+  #product-group .product-wrapper .product .p-img {
+    -webkit-transition: background-size .33s ease-out;
+    transition: background-size .33s ease-out;
+    height: 15rem;
+    width: 100%;
+    background-size: 100%;
+    background-position: center;
+  }
+  #product-group .product-wrapper .product:hover .p-img {
+    background-size: 115%;
+  }
+  #product-group .product-wrapper .product #glasses {
+    background-image: url(../img/jpg/glasses.jpg);
+  }
+  #product-group .product-wrapper .product #chair {
+    background-image: url(../img/jpg/chair.jpg);
+  }
+  #product-group .product-wrapper .product #airpods {
+    background-image: url(../img/jpg/airpods.jpg);
+  }
+  #product-group .product-wrapper .product #plant {
+    background-image: url(../img/jpg/plant.jpg);
+  }
+  #product-group .product-wrapper .product h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+  }
+  #product-group .product-wrapper .product p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  #product-group .product-wrapper .product .product-desc {
+    padding: 5%;
+  }
+  #product-group .product-wrapper .product .checkbox-custom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 0.33rem;
+    background-size: cover;
+    margin-right: 5%;
+    vertical-align: text-top;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+  }
+  #product-group .product-wrapper .product .checkbox-custom.check1 {
+    background-color: #143061;
+  }
+  #product-group .product-wrapper .product .checkbox-custom.check2 {
+    background-color: #81396F;
+  }
+  #product-group .product-wrapper .product .checkbox-custom.check3 {
+    background-color: #F6437D;
+  }
+  #product-group .product-wrapper .product .checkbox-custom img {
+    width: 66%;
+  }
+  #product-group .product-wrapper .product button {
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: black;
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 7.5%;
+    -webkit-transition: background-image 0.33s;
+    transition: background-image 0.33s;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    padding: 3% 7.5%;
+    padding-bottom: 5%;
+  }
+  footer img {
+    width: 20%;
+    margin-right: 7.5%;
+    display: block;
+  }
+  footer .footerbox {
+    padding: 0 2.5%;
+  }
+  footer h2 {
+    font-size: 1.25rem;
+    color: #F6437D;
+    font-weight: 800;
+    padding: 3% 0;
+  }
+  footer p {
+    font-size: .7rem;
+    font-weight: 200;
+    color: white;
+    padding: 2.5% 0;
+  }
 }
 /*# sourceMappingURL=media-query.css.map */
