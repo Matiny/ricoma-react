@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/ricoma-react/static/css/main.f8edabbc.chunk.css",
+    "main.js": "/ricoma-react/static/js/main.dd2ece79.chunk.js",
+    "main.js.map": "/ricoma-react/static/js/main.dd2ece79.chunk.js.map",
+    "runtime-main.js": "/ricoma-react/static/js/runtime-main.393962b5.js",
+    "runtime-main.js.map": "/ricoma-react/static/js/runtime-main.393962b5.js.map",
+    "static/js/2.a3b9b1ca.chunk.js": "/ricoma-react/static/js/2.a3b9b1ca.chunk.js",
+    "static/js/2.a3b9b1ca.chunk.js.map": "/ricoma-react/static/js/2.a3b9b1ca.chunk.js.map",
+    "index.html": "/ricoma-react/index.html",
+    "precache-manifest.d340ca314a476e1d4067de0cbf4614b4.js": "/ricoma-react/precache-manifest.d340ca314a476e1d4067de0cbf4614b4.js",
+    "service-worker.js": "/ricoma-react/service-worker.js",
+    "static/css/main.f8edabbc.chunk.css.map": "/ricoma-react/static/css/main.f8edabbc.chunk.css.map",
+    "static/js/2.a3b9b1ca.chunk.js.LICENSE": "/ricoma-react/static/js/2.a3b9b1ca.chunk.js.LICENSE",
+    "static/media/media-query.css": "/ricoma-react/static/media/plant.56a5bb66.jpg",
+    "static/media/arrow-down.svg": "/ricoma-react/static/media/arrow-down.e31f9a56.svg",
+    "static/media/cart.svg": "/ricoma-react/static/media/cart.93010bdd.svg",
+    "static/media/check.svg": "/ricoma-react/static/media/check.e612b013.svg",
+    "static/media/close.svg": "/ricoma-react/static/media/close.f8b7d8e2.svg",
+    "static/media/footer.svg": "/ricoma-react/static/media/footer.29d5ae15.svg",
+    "static/media/style.css": "/ricoma-react/static/media/hero-bg.348f09c7.png",
+    "static/media/hero.png": "/ricoma-react/static/media/hero.35e16622.png",
+    "static/media/menu.svg": "/ricoma-react/static/media/menu.c275e518.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.393962b5.js",
+    "static/js/2.a3b9b1ca.chunk.js",
+    "static/css/main.f8edabbc.chunk.css",
+    "static/js/main.dd2ece79.chunk.js"
+  ]
+}
