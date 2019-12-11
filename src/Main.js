@@ -165,7 +165,13 @@ export default class Main extends Component {
       display: this.state.timer ? "flex" : "none"
     }
 
-    let glassesText = this.state.allItems.includes("glasses") ? "Remove from cart" : "Add to cart"
+    let glassesText = this.state.allItems.includes("glasses") ? "Remove from cart" : "Add to cart";
+    
+    let chairText = this.state.allItems.includes("chair") ? "Remove from cart" : "Add to cart";
+    
+    let airpodsText = this.state.allItems.includes("airpods") ? "Remove from cart" : "Add to cart";
+    
+    let plantText = this.state.allItems.includes("plant") ? "Remove from cart" : "Add to cart";
     
     return (
       <main>
@@ -251,7 +257,7 @@ export default class Main extends Component {
                 else {
                   this.addItem("glasses")
                 }
-                }}> {glassesText}</button>
+                }}>{glassesText}</button>
             </div>
           </div>
           <div className="product-wrapper">
@@ -273,7 +279,14 @@ export default class Main extends Component {
                   </span>
                 </div>
               </div>
-              <button id="button2">Add to cart</button>
+              <button id="button2" onClick={()=>{
+                if (this.state.allItems.includes("chair")) {
+                  this.removeItem("chair")
+                }
+                else {
+                  this.addItem("chair")
+                }
+                }}>{chairText}</button>
             </div>
           </div>
           <div className="product-wrapper">
@@ -295,7 +308,14 @@ export default class Main extends Component {
                   </span>
                 </div>
               </div>
-              <button id="button3">Add to cart</button>
+              <button id="button3" onClick={()=>{
+                if (this.state.allItems.includes("airpods")) {
+                  this.removeItem("airpods")
+                }
+                else {
+                  this.addItem("airpods")
+                }
+                }}>{airpodsText}</button>
             </div>
           </div>
           <div className="product-wrapper">
@@ -317,7 +337,14 @@ export default class Main extends Component {
                   </span>
                 </div>
               </div>
-              <button id="button4">Add to cart</button>
+              <button id="button4" onClick={()=>{
+                if (this.state.allItems.includes("plant")) {
+                  this.removeItem("plant")
+                }
+                else {
+                  this.addItem("plant")
+                }
+                }}>{plantText}</button>
             </div>
           </div>
         </section>
