@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+button {
+    cursor: pointer;
+}
+
+.checkboxes {
+    padding: 15% 0;
+}
+
+.info .checkboxes {
+    padding: 3% 0;
+}
+
+#p11, #p21, #p31, #p41 {
+    display: none;
+
+    & + [for="p11"]:before, & + [for="p21"]:before, & + [for="p31"]:before, & + [for="p41"]:before, {
+        content: '';
+        background-color: #143061;
+        border-radius: 0.25vw;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 2.5%;
+        vertical-align: text-top;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    &:checked + [for="p11"]:before, &:checked + [for="p21"]:before, &:checked + [for="p31"]:before, &:checked + [for="p41"]:before  {
+        content: '';
+        // background: url(../img/1check.png);
+        width: 2vw;
+        height: 2vw;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 2.5%;
+        vertical-align: text-top;
+    }
+}
+
+#p12, #p22, #p32, #p42 {
+    display: none;
+
+    & + [for="p12"]:before, & + [for="p22"]:before, & + [for="p32"]:before, & + [for="p42"]:before {
+        content: '';
+        background-color: #81396F;
+        border-radius: 0.25vw;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 2.5%;
+        vertical-align: text-top;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    &:checked + [for="p12"]:before, &:checked + [for="p22"]:before, &:checked + [for="p32"]:before, &:checked + [for="p42"]:before {
+        content: '';
+        background-color:#81396F ;
+        border-radius: 0.25vw;
+        width: 2vw;
+        height: 2vw;
+        background-size: cover;
+        display: inline-block;
+        margin-right: 2.5%;
+        vertical-align: text-top;
+    }
+}
+
+#p13, #p23, #p33, #p43 {
+    display: none;
+
+    & + [for="p13"]:before,  & + [for="p23"]:before,  & + [for="p33"]:before,  & + [for="p43"]:before {
+        content: '';
+        background-color: #F6437D;
+        border-radius: 0.25vw;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 2vw;
+        height: 2vw;
+    }
+
+    &:checked + [for="p13"]:before, &:checked + [for="p23"]:before, &:checked + [for="p33"]:before, &:checked + [for="p43"]:before {
+        content: '';
+        // background: url(../img/3check.png);
+        width: 2vw;
+        height: 2vw;
+        background-size: cover;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+}
+
+#timer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1F3162;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255,255,255,0.72);
+    padding: 0.5% 0;
+
+    #timer-text {
+        font-size: 1.25vw;
+    }
+    
+    #timer {
+        display: flex;
+        width: 18%;
+        margin: 0 1%;
+        span {
+            margin: 0 2%;
+            width: 25%;
+        }
+        .number {
+            font-weight: bold;
+            font-size: 1.1vw;
+            color: white;
+            letter-spacing: 0.15vw;
+        }
+    
+        .time {
+            font-size: 1vw;
+        }
+    }
+
+    #close {
+        position: absolute;
+        width: 1%;
+        right: 2.5%;
+        cursor: pointer;
+    }
+    
+}
+
+#menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    border-bottom: 1px solid #E6E6E7;
+    padding: 1% 2%;
+    h1 {
+        font-weight: 600;
+        font-size: 2vw;
+    }
+    a {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        letter-spacing: .25vw;
+    }
+
+    #cart {
+        position: relative;
+        width: 5%;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        
+        .count {
+            display: none;
+            top: -50%;
+            left: 25%;
+            position: absolute;
+            background-color: #D74179;
+            color: white;
+            font-weight: bold;
+            border-radius: 100%;
+            font-size: 1vw;
+            width: 1.75vw;
+            height: 1.75vw;
+            text-align: center;
+            line-height: 1.75vw;
+        }
+
+        #cart-pic {
+            width: 50%;
+        }
+
+        #arrow-pic {
+            width: 10%;
+            margin-left: 5%;
+        }
+    }
+
+    #cart-list {
+        top: 100%;
+        right: 3.5%;
+        position: absolute;
+        width: 20%;
+        border: 1px solid #E6E6E7;
+        z-index: 1;
+        background: white;
+        padding: 1%;
+        border-bottom-right-radius: 1vw;
+        border-bottom-left-radius: 1vw;
+        display: none;
+    }
+
+    #item {
+        width: 100%;
+        display: flex;
+        h1 {
+            font-size: 1.5vw;
+        }
+        .preview {
+            width: 35%;
+        
+            img {
+                width: 100%;
+                border-radius: 1vw;
+            }
+        }
+    }
+
+    .remove {
+        color: #646A70;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1vw;
+        text-decoration: underline;
+    }
+
+    .info {
+        padding: 0 5%;
+    }
+}
+
+#hero {
+    background: url(../img/png/hero-bg.png) no-repeat center scroll;
+    background-size: cover;
+    color: white;
+    position: relative;
+    padding: 3% 5%;
+
+    #left {
+        width: 50%;
+        padding-bottom: 5%;
+    }
+
+    h1 {
+        font-size: 5.75vw; 
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        line-height: 6.25vw;
+        padding-bottom: 5%;
+
+    }
+
+    .desc-wrapper {
+        padding-bottom: 5%;
+    }
+    
+    .hero-desc {
+        font-family: 'Open Sans', sans-serif;
+        padding-bottom: 1.5%;
+        font-size: 1.1vw;
+    }
+
+    button {
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.1vw;
+        background-color: black;
+        box-shadow: 0 .5vw 1vw rgba(0,0,0,0.6);
+        width: 17vw;
+        color: white;
+        border: none;
+        padding: 2%;
+        border-radius: 2vw;
+    }
+    
+    #hero-man {
+        position: absolute;
+        width: 42.5%;
+        bottom: -5%;
+        right: 5%;
+    }
+    
+}
+
+#product-group {
+    display: flex;
+    padding: 7.5% 3% 5% 3%;
+
+    .product-wrapper {
+        width: 25%;
+        padding: 0 1%;
+
+        .product {
+            user-select: none;
+            overflow: hidden;
+            border: 1px solid #ECECEC;
+            border-radius: 1vw;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,0.13);
+
+            .p-img {
+                height: 17vw;
+                width: 100%;
+                background-size: cover;
+                background-position: center;
+            }
+            #glasses {
+                background-image: url(../img/jpg/glasses.jpg);
+            }
+            #chair {
+                background-image: url(../img/jpg/chair.jpg);
+            }
+            #airpods {
+                background-image: url(../img/jpg/airpods.jpg);
+            }
+            #plant {
+                background-image: url(../img/jpg/plant.jpg);
+            }
+            h1 {
+                font-size: 1.5vw;
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+            }
+            p {
+                font-family: 'Open Sans', sans-serif;
+                font-weight: normal;
+                font-size: 1.1vw;
+            }
+            .product-desc {
+                padding: 5%;
+            }
+
+            
+
+            button {
+                font-weight: 600;
+                font-family: 'Poppins', sans-serif;
+                color: white;
+                background-color: black;
+                border: none;
+                display: block;
+                width: 100%;
+                font-size: 1.1vw;
+                padding: 7.5%;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    padding: 3% 7.5%;
+    padding-bottom: 5%;
+    
+    img {
+        width: 12.5%;
+        margin-right: 7.5%;
+    }
+
+    .footerbox {
+        padding: 0 2.5%;
+    }
+    
+    h2 {
+        font-size: 1.25vw;
+        color: #F6437D;
+        font-weight: 800;
+        padding: 3% 0;
+    }
+    p {
+        font-size: 1.1vw;
+        font-weight: 200;
+        color: white;
+        padding: 2.5% 0;
+    }
+}
