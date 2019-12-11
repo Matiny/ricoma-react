@@ -9,6 +9,7 @@ import hero from './img/png/hero.png';
 import cart from './img/svg/cart.svg';
 import arrowdown from './img/svg/arrow-down.svg';
 import footer from './img/svg/footer.svg';
+import check from './img/svg/check.svg';
 
 
 
@@ -20,7 +21,20 @@ export default class Main extends Component {
       hours: 0,
       minutes: 0,
       seconds: 0,
-      timer: true
+      timer: true,
+      gch1: false,
+      gch2: false,
+      gch3: false,
+      cch1: false,
+      cch2: false,
+      cch3: false,
+      ach1: false,
+      ach2: false,
+      ach3: false,
+      pch1: false,
+      pch2: false,
+      pch3: false,
+      allItems: []
     }
   }
 
@@ -46,6 +60,85 @@ export default class Main extends Component {
     }
   }
 
+  toggleGlasses1 = () => {
+    this.setState(prevState => ({
+      gch1: !prevState.gch1
+    }));
+  }
+  toggleGlasses2 = () => {
+    this.setState(prevState => ({
+      gch2: !prevState.gch2
+    }));
+  }
+  toggleGlasses3 = () => {
+    this.setState(prevState => ({
+      gch3: !prevState.gch3
+    }));
+  }
+
+  toggleChair1 = () => {
+    this.setState(prevState => ({
+      cch1: !prevState.cch1
+    }));
+  }
+  toggleChair2 = () => {
+    this.setState(prevState => ({
+      cch2: !prevState.cch2
+    }));
+  }
+  toggleChair3 = () => {
+    this.setState(prevState => ({
+      cch3: !prevState.cch3
+    }));
+  }
+
+  toggleAirpod1 = () => {
+    this.setState(prevState => ({
+      ach1: !prevState.ach1
+    }));
+  }
+  toggleAirpod2 = () => {
+    this.setState(prevState => ({
+      ach2: !prevState.ach2
+    }));
+  }
+  toggleAirpod3 = () => {
+    this.setState(prevState => ({
+      ach3: !prevState.ach3
+    }));
+  }
+
+  togglePlant1 = () => {
+    this.setState(prevState => ({
+      pch1: !prevState.pch1
+    }));
+  }
+  togglePlant2 = () => {
+    this.setState(prevState => ({
+      pch2: !prevState.pch2
+    }));
+  }
+  togglePlant3 = () => {
+    this.setState(prevState => ({
+      pch3: !prevState.pch3
+    }));
+  }
+
+  addItem = (whichProduct) => {
+    this.setState({
+      allItems: [...this.state.allItems, whichProduct]
+    })
+  }
+
+  removeItem = (whichProduct) => {
+    const newItems = this.state.allItems.filter(
+      item => item !== whichProduct
+    )
+    this.setState({
+      allItems: [...newItems]
+    })
+  }
+
   closeTimer = () => {
     this.setState({
       timer: false
@@ -54,7 +147,7 @@ export default class Main extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-    this.getTime()
+      this.getTime()
     }, 1000);
   }
 
@@ -63,9 +156,17 @@ export default class Main extends Component {
   }
 
   render() {
+
+    let countStyle = {
+      display: this.state.allItems.length > 0 ? "block" : "none"
+    }
+
     let timerStyle = {
       display: this.state.timer ? "flex" : "none"
     }
+
+    let glassesText = this.state.allItems.includes("glasses") ? "Remove from cart" : "Add to cart"
+    
     return (
       <main>
         <section id="timer-bar" style={timerStyle}>
@@ -88,7 +189,7 @@ export default class Main extends Component {
               <p className="time">seconds</p>
             </span>
           </div>
-          <img src={close} alt="" id="close" onClick={() => {this.closeTimer()}} />
+          <img src={close} alt="" id="close" onClick={() => { this.closeTimer() }} />
 
         </section>
         <nav id="menu">
@@ -99,7 +200,7 @@ export default class Main extends Component {
           <a href="">CONSECTETUR</a>
           <a href="">VENIAM</a>
           <span id="cart">
-            <div className="count"></div>
+            <div className="count" style={countStyle}>{this.state.allItems.length}</div>
             <img id="cart-pic" src={cart} alt="" />
             <img id="arrow-pic" src={arrowdown} alt="" />
           </span>
@@ -126,21 +227,31 @@ export default class Main extends Component {
         <section id="product-group">
           <div className="product-wrapper">
             <div className="product" id="product1">
-            <div id="glasses" className="p-img"></div>
+              <div id="glasses" className="p-img"></div>
               <div className="product-desc">
                 <h1>Lorem ipsum 1</h1>
                 <p>Lorem ipsum dolor sit amet, </p>
                 <p>consectetur adipiscing elit.</p>
                 <div className="checkboxes">
-                  <input type="checkbox" name="" id="p11" />
-                  <label for="p11"></label>
-                  <input type="checkbox" name="" id="p12" />
-                  <label for="p12"></label>
-                  <input type="checkbox" name="" id="p13" />
-                  <label for="p13"></label>
+                  <span className="checkbox-custom check1" onClick={() => { this.toggleGlasses1() }}>
+                    <img className="selected" src={this.state.gch1 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check2" onClick={() => { this.toggleGlasses2() }}>
+                    <img className="selected" src={this.state.gch2 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check3" onClick={() => { this.toggleGlasses3() }}>
+                    <img className="selected" src={this.state.gch3 ? check : null} />
+                  </span>
                 </div>
               </div>
-              <button id="button1">Add to cart</button>
+              <button id="button1" onClick={()=>{
+                if (this.state.allItems.includes("glasses")) {
+                  this.removeItem("glasses")
+                }
+                else {
+                  this.addItem("glasses")
+                }
+                }}> {glassesText}</button>
             </div>
           </div>
           <div className="product-wrapper">
@@ -151,12 +262,15 @@ export default class Main extends Component {
                 <p>Lorem ipsum dolor sit amet, </p>
                 <p>consectetur adipiscing elit.</p>
                 <div className="checkboxes">
-                  <input type="checkbox" name="" id="p21" />
-                  <label for="p21"></label>
-                  <input type="checkbox" name="" id="p22" />
-                  <label for="p22"></label>
-                  <input type="checkbox" name="" id="p23" />
-                  <label for="p23"></label>
+                  <span className="checkbox-custom check1" onClick={() => { this.toggleChair1() }}>
+                    <img className="selected" src={this.state.cch1 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check2" onClick={() => { this.toggleChair2() }}>
+                    <img className="selected" src={this.state.cch2 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check3" onClick={() => { this.toggleChair3() }}>
+                    <img className="selected" src={this.state.cch3 ? check : null} />
+                  </span>
                 </div>
               </div>
               <button id="button2">Add to cart</button>
@@ -170,12 +284,15 @@ export default class Main extends Component {
                 <p>Lorem ipsum dolor sit amet, </p>
                 <p>consectetur adipiscing elit.</p>
                 <div className="checkboxes">
-                  <input type="checkbox" name="" id="p31" />
-                  <label for="p31"></label>
-                  <input type="checkbox" name="" id="p32" />
-                  <label for="p32"></label>
-                  <input type="checkbox" name="" id="p33" />
-                  <label for="p33"></label>
+                <span className="checkbox-custom check1" onClick={() => { this.toggleAirpod1() }}>
+                    <img className="selected" src={this.state.ach1 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check2" onClick={() => { this.toggleAirpod2() }}>
+                    <img className="selected" src={this.state.ach2 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check3" onClick={() => { this.toggleAirpod3() }}>
+                    <img className="selected" src={this.state.ach3 ? check : null} />
+                  </span>
                 </div>
               </div>
               <button id="button3">Add to cart</button>
@@ -189,12 +306,15 @@ export default class Main extends Component {
                 <p>Lorem ipsum dolor sit amet, </p>
                 <p>consectetur adipiscing elit.</p>
                 <div className="checkboxes">
-                  <input type="checkbox" name="" id="p41" />
-                  <label for="p41"></label>
-                  <input type="checkbox" name="" id="p42" />
-                  <label for="p42"></label>
-                  <input type="checkbox" name="" id="p43" />
-                  <label for="p43"></label>
+                <span className="checkbox-custom check1" onClick={() => { this.togglePlant1() }}>
+                    <img className="selected" src={this.state.pch1 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check2" onClick={() => { this.togglePlant2() }}>
+                    <img className="selected" src={this.state.pch2 ? check : null} />
+                  </span>
+                  <span className="checkbox-custom check3" onClick={() => { this.togglePlant3() }}>
+                    <img className="selected" src={this.state.pch3 ? check : null} />
+                  </span>
                 </div>
               </div>
               <button id="button4">Add to cart</button>

@@ -13,10 +13,38 @@ button {
 
 .checkboxes {
     padding: 15% 0;
+    display: flex;
 }
 
 .info .checkboxes {
     padding: 3% 0;
+}
+
+.checkbox-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25vw;
+    background-size: cover;
+    margin-right: 2.5%;
+    vertical-align: text-top;
+    width: 2vw;
+    height: 2vw;
+    cursor: pointer;
+
+    &.check1 {
+        background-color: #143061;
+    }
+    &.check2 {
+        background-color: #81396F;
+    }
+    &.check3 {
+        background-color: #F6437D;
+    }
+
+    img {
+        width: 66%;
+    }
 }
 
 #p11, #p21, #p31, #p41 {
@@ -169,7 +197,7 @@ button {
         cursor: pointer;
         
         .count {
-            display: none;
+            // display: none;
             top: -50%;
             left: 25%;
             position: absolute;
