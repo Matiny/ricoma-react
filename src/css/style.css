@@ -260,25 +260,33 @@ button {
   padding: 1%;
   border-bottom-right-radius: 1vw;
   border-bottom-left-radius: 1vw;
-  display: none;
 }
 
-#menu #item {
+#menu hr {
+  border: 1px solid #979797;
+  margin: 5% 0;
+  opacity: 0.35;
+}
+
+#menu .item {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-#menu #item h1 {
-  font-size: 1.5vw;
+#menu .item h1 {
+  font-size: 1.33vw;
 }
 
-#menu #item .preview {
+#menu .item .preview {
   width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#menu #item .preview img {
+#menu .item .preview img {
   width: 100%;
   border-radius: 1vw;
 }
@@ -288,6 +296,7 @@ button {
   font-family: 'Open Sans', sans-serif;
   font-size: 1vw;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #menu .info {
